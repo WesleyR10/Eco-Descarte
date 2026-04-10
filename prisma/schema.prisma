@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Pontos de coleta de lixo eletrônico
+model CollectionPoint {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name     String
+  address  String
+  city     String
+  state    String  @default("MG")
+  phone    String?
+  hours    String?
+  type     String  // prefeitura, loja, cooperativa, empresa, ong
+  distance String? // distância aproximada do Novo Retiro
+  lat      Float?  // latitude para futuro mapa
+  lng      Float?  // longitude para futuro mapa
+  active   Boolean @default(true)
+
+  accepts AcceptedItem[]
+}
+
+// Tipos de lixo aceitos por cada ponto
+model AcceptedItem {
+  id               String          @id @default(cuid())
+  name             String
+  collectionPoint  CollectionPoint @relation(fields: [collectionPointId], references: [id], onDelete: Cascade)
+  collectionPointId String
+}
+
+// Categorias de lixo eletrônico
+model WasteCategory {
+  id          String @id @default(cuid())
+  slug        String @unique
+  name        String
+  icon        String
+  description String
+  tip         String
+  recyclable  Boolean @default(true)
+  order       Int     @default(0)
+
+  examples     CategoryExample[]
+  discardSteps DiscardStep[]
+  dangers      Danger[]
+}
+
+model CategoryExample {
+  id         String        @id @default(cuid())
+  name       String
+  category   WasteCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
+}
+
+model DiscardStep {
+  id         String        @id @default(cuid())
+  step       Int
+  text       String
+  category   WasteCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
+}
+
+model Danger {
+  id         String        @id @default(cuid())
+  text       String
+  category   WasteCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
+}
+
+// Resultados do quiz (para estatísticas)
+model QuizResult {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  score     Int
+  total     Int
+  percentage Float
+  bestStreak Int     @default(0)
+  timeSpent  Int?    // segundos
+}
+
+// Contato/feedback da comunidade
+model ContactMessage {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  name      String
+  email     String?
+  message   String
+  type      String   @default("feedback") // feedback, sugestao, ponto_coleta
+  read      Boolean  @default(false)
+}
