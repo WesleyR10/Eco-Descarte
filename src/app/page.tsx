@@ -15,6 +15,7 @@ import {
   Shield,
 } from "lucide-react";
 import CountUp from "@/components/CountUp";
+import FadeIn from "@/components/FadeIn";
 import { stats } from "@/data/stats";
 import { wasteCategories } from "@/data/categories";
 
@@ -90,15 +91,17 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="card text-center py-8">
-                <div className="text-3xl md:text-4xl font-black gradient-text mb-2">
-                  <CountUp value={stat.value} />
+              <FadeIn key={index} delay={index * 100} direction="up">
+                <div className="card text-center py-8">
+                  <div className="text-3xl md:text-4xl font-black gradient-text mb-2">
+                    <CountUp value={stat.value} />
+                  </div>
+                  <div className="text-white font-semibold mb-1">
+                    {stat.label}
+                  </div>
+                  <div className="text-dark-400 text-sm">{stat.description}</div>
                 </div>
-                <div className="text-white font-semibold mb-1">
-                  {stat.label}
-                </div>
-                <div className="text-dark-400 text-sm">{stat.description}</div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -165,19 +168,21 @@ export default function Home() {
                   color: "text-blue-400",
                 },
               ].map((item, index) => (
-                <div key={index} className="card flex items-start gap-4">
-                  <div
-                    className={`w-10 h-10 rounded-lg bg-dark-800 flex items-center justify-center flex-shrink-0 ${item.color}`}
-                  >
-                    <item.icon className="w-5 h-5" />
+                <FadeIn key={index} delay={index * 150} direction="right">
+                  <div className="card flex items-start gap-4">
+                    <div
+                      className={`w-10 h-10 rounded-lg bg-dark-800 flex items-center justify-center flex-shrink-0 ${item.color}`}
+                    >
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-dark-400 text-sm">{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-dark-400 text-sm">{item.desc}</p>
-                  </div>
-                </div>
+                </FadeIn>
               ))}
             </div>
           </div>

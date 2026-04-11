@@ -1,10 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import {
   collectionPoints,
   typeLabels,
   typeColors,
 } from "@/data/collection-points";
+
+const CollectionMap = dynamic(() => import("@/components/CollectionMap"), { ssr: false });
 import {
   MapPin,
   Phone,
@@ -88,6 +91,15 @@ export default function PontosDeColetaPage() {
               de apagar seus dados pessoais de celulares e computadores antes do descarte.
             </p>
           </div>
+        </div>
+
+        {/* Interactive Map */}
+        <div className="mb-8">
+          <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <MapPin className="w-5 h-5 text-primary-400" />
+            Mapa dos Pontos de Coleta
+          </h2>
+          <CollectionMap />
         </div>
 
         {/* Filters */}

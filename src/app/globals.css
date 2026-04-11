@@ -10,6 +10,35 @@
   body {
     @apply bg-dark-950 text-dark-100 antialiased;
   }
+
+  /* Light theme overrides */
+  html.light body {
+    @apply bg-white text-dark-800;
+  }
+
+  html.light .card {
+    @apply bg-white/90 border-gray-200 hover:border-primary-400/50 hover:shadow-lg hover:shadow-primary-500/10;
+  }
+
+  html.light .btn-secondary {
+    @apply border-gray-300 text-dark-600 hover:text-primary-600 hover:border-primary-400;
+  }
+
+  html.light .section-subtitle {
+    @apply text-dark-500;
+  }
+
+  html.light header {
+    @apply bg-white/90 border-gray-200;
+  }
+
+  html.light header a {
+    @apply text-dark-600;
+  }
+
+  html.light footer {
+    @apply bg-gray-50 border-gray-200;
+  }
 }
 
 @layer components {

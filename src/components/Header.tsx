@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Recycle } from "lucide-react";
+import { Menu, X, Recycle, Sun, Moon } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
   { href: "/", label: "Início" },
@@ -15,6 +16,7 @@ const navLinks = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-xl border-b border-dark-800/50">
@@ -42,15 +44,25 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-dark-300 hover:text-white"
-            aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Theme toggle + Mobile toggle */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-dark-300 hover:text-primary-400 rounded-lg hover:bg-dark-800/50 transition-all"
+              aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
+            >
+              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 text-dark-300 hover:text-white"
+              aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile nav */}
