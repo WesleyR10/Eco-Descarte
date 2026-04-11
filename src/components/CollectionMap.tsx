@@ -122,7 +122,12 @@ export default function CollectionMap() {
   const [userPos, setUserPos] = useState<{ lat: number; lng: number } | null>(null);
   const [geoStatus, setGeoStatus] = useState<"idle" | "loading" | "granted" | "denied">("idle");
 
-  function requestLocation() {
+  // Auto-request location on mount
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      setGeoStatus("denied");
+      return;
+    }
     setGeoStatus("loading");
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -130,9 +135,9 @@ export default function CollectionMap() {
         setGeoStatus("granted");
       },
       () => setGeoStatus("denied"),
-      { enableHighAccuracy: true, timeout: 10000 }
+      { enableHighAccuracy: true, timeout: 8000 }
     );
-  }
+  }, []);
 
   const sortedPoints = userPos
     ? [...COLLECTION_POINTS].sort(
@@ -156,30 +161,22 @@ export default function CollectionMap() {
         }
       `}</style>
 
-      {/* Geolocation button */}
-      {geoStatus === "idle" && (
-        <button
-          onClick={requestLocation}
-          className="mb-4 btn-primary text-sm"
-        >
-          📍 Usar minha localização para ver pontos próximos
-        </button>
-      )}
+      {/* Geolocation status */}
       {geoStatus === "loading" && (
-        <p className="mb-4 text-dark-400 text-sm flex items-center gap-2">
+        <div className="mb-4 p-3 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center gap-2 text-sm">
           <span className="w-4 h-4 border-2 border-primary-400 border-t-transparent rounded-full animate-spin" />
-          Obtendo sua localização...
-        </p>
+          <span className="text-primary-400">Obtendo sua localização para mostrar pontos próximos...</span>
+        </div>
       )}
       {geoStatus === "denied" && (
-        <p className="mb-4 text-amber-400 text-sm">
-          ⚠️ Localização negada. Mostrando pontos a partir do bairro Novo Retiro.
-        </p>
+        <div className="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-sm text-amber-400">
+          ⚠️ Localização não disponível. Mostrando pontos a partir do bairro Novo Retiro, Esmeraldas/MG.
+        </div>
       )}
       {geoStatus === "granted" && userPos && (
-        <p className="mb-4 text-primary-400 text-sm font-medium">
-          ✅ Localização obtida! Pontos ordenados por proximidade.
-        </p>
+        <div className="mb-4 p-3 rounded-xl bg-primary-500/10 border border-primary-500/20 text-sm text-primary-400 font-medium">
+          ✅ Localização obtida! Mostrando {sortedPoints.length} pontos de coleta ordenados por proximidade.
+        </div>
       )}
 
       <MapContainer

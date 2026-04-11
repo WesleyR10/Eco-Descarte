@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with 3D Globe */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="hero-dark relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-dark-950 via-dark-900 to-primary-950/20" />
 
         {/* 3D Globe Background */}
@@ -293,7 +293,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-dark-900/50 border-t border-dark-800/50" aria-label="Chamada para ação">
         <div className="container-custom">
-          <div className="card bg-gradient-to-br from-primary-950/50 to-dark-900 border-primary-500/20 text-center py-12 px-8">
+          <div className="cta-dark card bg-gradient-to-br from-primary-950/50 to-dark-900 border-primary-500/20 text-center py-12 px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Faça parte da mudança no Novo Retiro
             </h2>
