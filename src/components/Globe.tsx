@@ -104,10 +104,10 @@ function EarthSphere() {
 
 export default function Globe() {
   return (
-    <div className="w-full h-full" aria-hidden="true">
+    <div className="w-full h-full cursor-grab active:cursor-grabbing" aria-hidden="true">
       <Canvas
         camera={{ position: [0, 0, 6], fov: 45 }}
-        style={{ background: "transparent" }}
+        style={{ background: "transparent", cursor: "inherit" }}
         gl={{ alpha: true, antialias: true }}
       >
         <ambientLight intensity={0.5} />

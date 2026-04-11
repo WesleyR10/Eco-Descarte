@@ -1,18 +1,20 @@
-# ATIVIDADE EXTENSIONISTA I — TRABALHO FINAL
+# ATIVIDADES EXTENSIONISTAS — Proposta de Tema / Trabalho Final
 
-**Curso:** Tecnólogo em Análise e Desenvolvimento de Sistemas
+**Curso:** (X) CST em Análise e Desenvolvimento de Sistemas
 
-**Disciplina:** Atividade Extensionista I: Tecnologia Aplicada à Inclusão Digital – Levantamento
+**Disciplina:** (X) Atividade Extensionista I: Tecnologia Aplicada à Inclusão Digital – Levantamento
 
-**Etapa:** Trabalho Final
+**Etapa:** (X) Trabalho final
 
-**Aluno:** Wesley Ribas Gonçalves — RU: 5022777
+| Aluno | RU |
+|---|---|
+| Wesley Ribas Gonçalves | 5022777 |
 
 ---
 
 ## Título
 
-EcoDescarte Digital: Ferramenta Web para Conscientização e Orientação sobre o Descarte Correto de Lixo Eletrônico na Comunidade do Bairro Novo Retiro — Esmeraldas/MG
+EcoDescarte Digital: Levantamento de Necessidades e Planejamento de Ferramenta Web para Orientação sobre o Descarte Correto de Lixo Eletrônico no Bairro Novo Retiro — Esmeraldas/MG
 
 ---
 
@@ -20,15 +22,16 @@ EcoDescarte Digital: Ferramenta Web para Conscientização e Orientação sobre 
 
 Bairro Novo Retiro — Esmeraldas, Minas Gerais.
 
-A comunidade do bairro Novo Retiro, localizada no município de Esmeraldas, região metropolitana de Belo Horizonte/MG, é composta majoritariamente por famílias de classe média e baixa que, em sua maioria, não possuem conhecimento adequado sobre os riscos do descarte incorreto de equipamentos eletrônicos e sobre os locais apropriados para a destinação desses resíduos.
+A comunidade do bairro Novo Retiro, localizada no município de Esmeraldas, região metropolitana de Belo Horizonte/MG, é composta majoritariamente por famílias de classe média e baixa. A maioria dos moradores não possui conhecimento adequado sobre os riscos do descarte incorreto de equipamentos eletrônicos, tampouco sobre os locais apropriados para a destinação desses resíduos na região.
 
 ---
 
 ## Objetivos de Desenvolvimento Sustentável (ODS)
 
-- **ODS 11 — Cidades e Comunidades Sustentáveis:** Tornar as cidades e os assentamentos humanos inclusivos, seguros, resilientes e sustentáveis, promovendo a gestão adequada de resíduos eletrônicos urbanos.
+(X) 11. Cidades e comunidades sustentáveis
+(X) 12. Consumo e produção responsáveis
 
-- **ODS 12 — Consumo e Produção Responsáveis:** Assegurar padrões de produção e de consumo sustentáveis, conscientizando a população sobre a redução da geração de resíduos por meio da prevenção, redução, reciclagem e reuso de equipamentos eletrônicos.
+O ODS 11 se relaciona ao projeto por promover a gestão adequada de resíduos eletrônicos urbanos, tornando a comunidade mais sustentável. O ODS 12 se relaciona por conscientizar a população sobre padrões sustentáveis de consumo e descarte de equipamentos eletrônicos, incentivando a reciclagem e o reuso.
 
 ---
 
@@ -36,77 +39,31 @@ A comunidade do bairro Novo Retiro, localizada no município de Esmeraldas, regi
 
 **Objetivo Geral:**
 
-Desenvolver uma plataforma web educativa e interativa, utilizando as tecnologias Next.js, TypeScript, Tailwind CSS e PostgreSQL, para conscientizar e orientar os moradores do bairro Novo Retiro, em Esmeraldas/MG, sobre o descarte correto de lixo eletrônico, promovendo a inclusão digital e a sustentabilidade ambiental.
+Realizar o levantamento das necessidades da comunidade do bairro Novo Retiro, em Esmeraldas/MG, em relação ao descarte de lixo eletrônico, e planejar uma plataforma web educativa utilizando Next.js, TypeScript e PostgreSQL para orientar os moradores sobre o descarte correto.
 
 **Objetivos Específicos:**
 
-1. Realizar o levantamento das necessidades da comunidade do bairro Novo Retiro em relação ao descarte de lixo eletrônico, identificando os principais problemas e carências informacionais.
+1. Mapear as necessidades da comunidade do bairro Novo Retiro em relação ao descarte de lixo eletrônico, identificando os principais problemas e a carência de informações acessíveis sobre o tema.
 
-2. Pesquisar e catalogar os pontos de coleta de lixo eletrônico disponíveis em Esmeraldas/MG e na região metropolitana de Belo Horizonte.
+2. Pesquisar e catalogar os pontos de coleta de lixo eletrônico disponíveis em Esmeraldas/MG e na região metropolitana de Belo Horizonte, utilizando consultas à Prefeitura, lojas e cooperativas locais.
 
-3. Desenvolver um guia interativo de descarte, utilizando a linguagem de programação TypeScript e o framework Next.js, categorizando os tipos de lixo eletrônico com orientações específicas para cada categoria.
+3. Definir a arquitetura tecnológica da plataforma web, utilizando o framework Next.js com a linguagem TypeScript para o frontend, o banco de dados PostgreSQL com Prisma ORM para o backend, e a plataforma Vercel para hospedagem.
 
-4. Implementar um quiz educativo gamificado para engajar os moradores na aprendizagem sobre descarte correto e impactos ambientais.
+4. Modelar o banco de dados relacional com Prisma ORM, estruturando as entidades necessárias para armazenar pontos de coleta, categorias de lixo eletrônico, conteúdo educativo e interações dos usuários.
 
-5. Criar um banco de dados relacional, utilizando PostgreSQL e Prisma ORM, para armazenar os pontos de coleta e categorias de resíduos.
+5. Elaborar o conteúdo educativo sobre descarte de lixo eletrônico, organizando as informações em categorias (celulares, computadores, pilhas, eletrodomésticos, lâmpadas e cabos) com orientações de descarte fundamentadas na Lei 12.305/2010.
 
-6. Aplicar os 7 Princípios do Desenho Universal no desenvolvimento da interface.
-
-7. Disponibilizar a plataforma na Internet, utilizando a Vercel para hospedagem.
+6. Projetar as interfaces da plataforma aplicando os 7 Princípios do Desenho Universal, garantindo acessibilidade para todos os perfis de usuários da comunidade.
 
 ---
 
 ## Metodologia
 
-A metodologia adotada para o desenvolvimento do projeto EcoDescarte Digital seguiu uma abordagem ágil simplificada, baseada no Kanban, organizada nas seguintes etapas sequenciais:
+A metodologia adotada para o levantamento do projeto EcoDescarte Digital seguiu uma abordagem ágil simplificada, baseada no Kanban, organizada nas seguintes etapas sequenciais:
 
-### Diagrama da Metodologia
+*[Inserir aqui a imagem do Diagrama 3 — Fluxo da Metodologia AE I, gerado no Mermaid Live]*
 
-```
-┌─────────────────┐
-│  1. LEVANTAMENTO │
-│   DO PROBLEMA    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  2. PESQUISA DE  │
-│    SOLUÇÕES      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  3. DEFINIÇÃO    │
-│  DA ARQUITETURA  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  4. MODELAGEM    │
-│  DO BANCO DE     │
-│     DADOS        │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  5. PROTOTIPAÇÃO │
-│  DAS INTERFACES  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  6. CATALOGAÇÃO  │
-│  DOS PONTOS DE   │
-│     COLETA       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  7. ELABORAÇÃO   │
-│  DO CONTEÚDO     │
-│   EDUCATIVO      │
-└─────────────────┘
-```
+*Figura 1 — Diagrama de fluxo da metodologia aplicada no levantamento do projeto EcoDescarte Digital: apresenta a sequência de 7 etapas desde o levantamento do problema até a elaboração do conteúdo educativo.*
 
 **Etapa 1 — Levantamento do Problema:**
 Realizou-se uma pesquisa informal junto aos moradores do bairro Novo Retiro, em Esmeraldas/MG, para identificar o nível de conhecimento da comunidade sobre o descarte correto de lixo eletrônico. Constatou-se que a maioria dos moradores descarta equipamentos eletrônicos no lixo comum por desconhecimento dos riscos ambientais e dos locais adequados para descarte.
@@ -118,16 +75,20 @@ Pesquisaram-se alternativas tecnológicas para solucionar o problema identificad
 Definiu-se a arquitetura tecnológica do projeto: Next.js 16 como framework frontend e backend (API Routes), TypeScript como linguagem de programação, Tailwind CSS para estilização responsiva, PostgreSQL (Supabase) como banco de dados relacional, Prisma ORM para modelagem e acesso ao banco, React Three Fiber para visualização 3D interativa, e Vercel para hospedagem e deploy contínuo.
 
 **Etapa 4 — Modelagem do Banco de Dados:**
-Modelou-se o banco de dados relacional com as seguintes entidades: CollectionPoint (pontos de coleta), AcceptedItem (itens aceitos por ponto), WasteCategory (categorias de lixo eletrônico), CategoryExample (exemplos por categoria), DiscardStep (passos de descarte), Danger (riscos do descarte incorreto), QuizResult (resultados dos quizzes) e ContactMessage (mensagens da comunidade).
+Modelou-se o banco de dados relacional com 8 entidades: CollectionPoint (pontos de coleta), AcceptedItem (itens aceitos por ponto), WasteCategory (categorias de lixo eletrônico), CategoryExample (exemplos por categoria), DiscardStep (passos de descarte), Danger (riscos do descarte incorreto), QuizResult (resultados dos quizzes) e ContactMessage (mensagens da comunidade).
+
+*[Inserir aqui a imagem do Diagrama 2 — Entidade-Relacionamento, gerado no Mermaid Live]*
+
+*Figura 2 — Diagrama Entidade-Relacionamento do banco de dados: demonstra a estrutura de dados e os relacionamentos entre as 8 entidades do sistema.*
 
 **Etapa 5 — Prototipação das Interfaces:**
 Projetaram-se as interfaces seguindo os 7 Princípios do Desenho Universal: design responsivo (adaptável), navegação intuitiva, alto contraste e fontes legíveis (informação de fácil percepção), botões com tamanho adequado para toque (baixo esforço físico), e feedback imediato no quiz (tolerância ao erro).
 
 **Etapa 6 — Catalogação dos Pontos de Coleta:**
-Pesquisaram-se e catalogaram-se os pontos de coleta de lixo eletrônico em Esmeraldas/MG e região metropolitana de BH, incluindo órgãos públicos (Prefeitura, Ecopontos SLU), lojas com programas de logística reversa (Magazine Luiza, Casas Bahia), cooperativas de catadores, empresas de reciclagem e programas nacionais (Papa-Pilhas).
+Pesquisaram-se e catalogaram-se 8 pontos de coleta de lixo eletrônico em Esmeraldas/MG e região metropolitana de BH, incluindo: Prefeitura Municipal de Esmeraldas, Ecoponto SLU Pampulha, Magazine Luiza (Programa Descarte Consciente), Casas Bahia (Logística Reversa), Cooperativa de Catadores de Esmeraldas, GM&C Reciclagem de Eletrônicos e Papa-Pilhas (Programa Nacional).
 
 **Etapa 7 — Elaboração do Conteúdo Educativo:**
-Elaborou-se o conteúdo educativo sobre descarte de lixo eletrônico, organizado em 6 categorias (celulares/tablets, computadores/notebooks, pilhas/baterias, eletrodomésticos, lâmpadas, cabos/acessórios), com informações sobre riscos, passos de descarte correto e dicas práticas. Também foram elaboradas 15 perguntas para o quiz educativo com 3 níveis de dificuldade.
+Elaborou-se o conteúdo educativo organizado em 6 categorias de lixo eletrônico (celulares/tablets, computadores/notebooks, pilhas/baterias, eletrodomésticos, lâmpadas, cabos/acessórios), com informações sobre riscos ambientais, passos de descarte correto e dicas práticas. Também foram elaboradas 15 perguntas para o quiz educativo com 3 níveis de dificuldade (fácil, médio, difícil), fundamentadas na Lei 12.305/2010 (Política Nacional de Resíduos Sólidos) e na Resolução CONAMA 401/2008.
 
 ---
 
@@ -135,26 +96,34 @@ Elaborou-se o conteúdo educativo sobre descarte de lixo eletrônico, organizado
 
 Com o levantamento realizado na Atividade Extensionista I, obtiveram-se os seguintes resultados:
 
-1. **Mapeamento do problema:** Identificou-se que a comunidade do bairro Novo Retiro carece de informações acessíveis sobre o descarte correto de lixo eletrônico, sendo que a maioria dos moradores desconhece os riscos ambientais e os locais adequados para descarte.
+1. **Mapeamento do problema:** Identificou-se que a comunidade do bairro Novo Retiro carece de informações acessíveis sobre o descarte correto de lixo eletrônico. A maioria dos moradores desconhece que equipamentos eletrônicos contêm substâncias tóxicas (chumbo, mercúrio, cádmio) e que existem locais específicos para descarte na região.
 
-2. **Catalogação de pontos de coleta:** Foram identificados e catalogados 8 pontos de coleta de lixo eletrônico na região, incluindo a Prefeitura de Esmeraldas, Ecopontos da SLU em BH, lojas com logística reversa, cooperativas e programas nacionais como o Papa-Pilhas.
+2. **Catalogação de 8 pontos de coleta:** Foram identificados e catalogados 8 pontos de coleta de lixo eletrônico acessíveis aos moradores do Novo Retiro, com informações de endereço, telefone, horário, tipos aceitos e distância aproximada do bairro.
 
-3. **Definição da solução tecnológica:** Definiu-se a arquitetura completa da plataforma web EcoDescarte Digital, com stack moderna (Next.js, TypeScript, PostgreSQL, Prisma) capaz de atender às necessidades identificadas.
+3. **Definição da arquitetura tecnológica:** Definiu-se a stack completa do projeto — Next.js 16 (TypeScript), Tailwind CSS, PostgreSQL (Supabase), Prisma ORM 7, React Three Fiber e Vercel — garantindo uma solução moderna, escalável e gratuita para hospedagem.
 
-4. **Modelagem do banco de dados:** Criou-se o modelo relacional com 8 entidades, permitindo o armazenamento estruturado de pontos de coleta, categorias de lixo, conteúdo educativo e interações dos usuários.
+4. **Modelagem do banco de dados:** Criou-se o modelo relacional com 8 entidades e seus relacionamentos, documentado através de Diagrama Entidade-Relacionamento (Figura 2), permitindo o armazenamento estruturado de todos os dados do sistema.
 
-5. **Conteúdo educativo:** Elaboraram-se orientações detalhadas de descarte para 6 categorias de lixo eletrônico e 15 perguntas para o quiz educativo, fundamentadas em legislação brasileira (Lei 12.305/2010, Resolução CONAMA 401/2008).
+5. **Conteúdo educativo completo:** Elaboraram-se orientações detalhadas de descarte para 6 categorias de lixo eletrônico e 15 perguntas para o quiz educativo, fundamentadas na legislação brasileira vigente.
 
-6. **Prototipação:** Definiram-se as interfaces da plataforma seguindo os Princípios do Desenho Universal, garantindo acessibilidade e usabilidade para todos os perfis de usuários da comunidade.
+6. **Protótipos das interfaces:** Definiram-se as 7 páginas da plataforma (Início, Guia de Descarte, Pontos de Coleta, Quiz, Contato, Sobre) seguindo os Princípios do Desenho Universal, garantindo acessibilidade e usabilidade.
+
+**Link do repositório GitHub com o código do projeto:** https://github.com/WesleyR10/Eco-Descarte
 
 ---
 
 ## Considerações Finais
 
-A Atividade Extensionista I permitiu realizar o levantamento completo do problema de descarte de lixo eletrônico na comunidade do bairro Novo Retiro, em Esmeraldas/MG, bem como a pesquisa e definição da solução tecnológica a ser implementada.
+O desenvolvimento da Atividade Extensionista I proporcionou os seguintes aprendizados:
 
-O principal aprendizado obtido foi a compreensão da dimensão do problema do lixo eletrônico no Brasil — o país gera mais de 2 milhões de toneladas de e-lixo por ano, sendo o 5º maior produtor mundial, com apenas 3% reciclado corretamente. Na comunidade local, essa realidade se reflete na falta de informação e na ausência de ferramentas digitais acessíveis que orientem os moradores.
+1. **Compreensão da dimensão do problema do lixo eletrônico no Brasil:** O país gera mais de 2 milhões de toneladas de e-lixo por ano, sendo o 5º maior produtor mundial, com apenas 3% reciclado corretamente. Na comunidade do bairro Novo Retiro, essa realidade se manifesta na falta de informação e no descarte incorreto de equipamentos eletrônicos no lixo comum.
 
-A principal dificuldade encontrada foi a catalogação dos pontos de coleta, uma vez que não existe um banco de dados público centralizado com essas informações para o município de Esmeraldas. A pesquisa foi realizada manualmente, consultando a prefeitura, lojas e cooperativas da região.
+2. **Importância da aplicação prática dos conhecimentos do curso de ADS:** O levantamento demonstrou que os conhecimentos adquiridos em disciplinas como Banco de Dados, Desenvolvimento Web e Engenharia de Software podem ser aplicados diretamente na resolução de problemas reais da comunidade, utilizando tecnologias como Next.js, TypeScript, PostgreSQL e Prisma ORM.
 
-Como trabalho futuro, na Atividade Extensionista II, pretende-se implementar a plataforma web EcoDescarte Digital, realizar o deploy na Internet e aplicar o projeto na comunidade do bairro Novo Retiro, comprovando sua efetividade como ferramenta de inclusão digital e conscientização ambiental. Sugere-se também a expansão do projeto para outros bairros de Esmeraldas e a integração com APIs de geolocalização para facilitar a localização dos pontos de coleta.
+3. **Relevância dos conceitos de TI Verde e economia circular:** O projeto evidenciou a importância do conceito de TI Verde no setor de Tecnologia da Informação, promovendo práticas sustentáveis como a reciclagem de equipamentos eletrônicos, o reuso de componentes e o descarte ambientalmente adequado.
+
+4. **Valor da acessibilidade no desenvolvimento de software:** A aplicação dos 7 Princípios do Desenho Universal no planejamento das interfaces mostrou que é possível criar soluções tecnológicas inclusivas, acessíveis a todas as pessoas independentemente de suas capacidades, sem comprometer a qualidade visual ou funcional do projeto.
+
+5. **Dificuldade na obtenção de dados públicos sobre pontos de coleta:** A principal dificuldade encontrada foi a catalogação dos pontos de coleta de lixo eletrônico em Esmeraldas/MG, pois não existe um banco de dados público centralizado com essas informações. A pesquisa foi realizada manualmente, consultando a Prefeitura, lojas e cooperativas da região.
+
+Como trabalho futuro, na Atividade Extensionista II pretende-se implementar a plataforma web EcoDescarte Digital, realizar o deploy na Internet e aplicar o projeto na comunidade do bairro Novo Retiro, comprovando sua efetividade como ferramenta de inclusão digital e conscientização ambiental.

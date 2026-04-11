@@ -14,6 +14,7 @@ import {
   Filter,
   Navigation,
   Info,
+  ExternalLink,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -101,16 +102,16 @@ export default function PontosDeColetaPage() {
               key={opt.value}
               onClick={() => setFilter(opt.value)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${filter === opt.value
-                  ? "bg-primary-600 text-white"
-                  : "bg-dark-800 text-dark-300 hover:bg-dark-700 hover:text-white"
+                ? "bg-primary-600 text-white"
+                : "bg-dark-800 text-dark-300 hover:bg-dark-700 hover:text-white"
                 }`}
               aria-pressed={filter === opt.value}
             >
               {opt.label}
               <span
                 className={`text-xs px-1.5 py-0.5 rounded-full ${filter === opt.value
-                    ? "bg-white/20"
-                    : "bg-dark-700 text-dark-400"
+                  ? "bg-white/20"
+                  : "bg-dark-700 text-dark-400"
                   }`}
               >
                 {opt.count}
@@ -186,6 +187,17 @@ export default function PontosDeColetaPage() {
                     ))}
                   </div>
                 </div>
+
+                {/* Google Maps button */}
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(point.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium px-4 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 w-full justify-center sm:w-auto"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Ir Agora — Google Maps
+                </a>
               </div>
             </article>
           ))}

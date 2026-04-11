@@ -1,12 +1,14 @@
-# ATIVIDADE EXTENSIONISTA II — TRABALHO FINAL
+# ATIVIDADES EXTENSIONISTAS — Proposta de Tema / Trabalho Final
 
-**Curso:** Tecnólogo em Análise e Desenvolvimento de Sistemas
+**Curso:** (X) CST em Análise e Desenvolvimento de Sistemas
 
-**Disciplina:** Atividade Extensionista II: Tecnologia Aplicada à Inclusão Digital – Projeto
+**Disciplina:** (X) Atividade Extensionista II: Tecnologia Aplicada à Inclusão Digital – Projeto
 
-**Etapa:** Trabalho Final
+**Etapa:** (X) Trabalho final
 
-**Aluno:** Wesley Ribas Gonçalves — RU: 5022777
+| Aluno | RU |
+|---|---|
+| Wesley Ribas Gonçalves | 5022777 |
 
 ---
 
@@ -20,15 +22,16 @@ EcoDescarte Digital: Implementação e Aplicação de Ferramenta Web para Descar
 
 Bairro Novo Retiro — Esmeraldas, Minas Gerais.
 
-A comunidade do bairro Novo Retiro, localizada no município de Esmeraldas, região metropolitana de Belo Horizonte/MG, é composta majoritariamente por famílias de classe média e baixa que, em sua maioria, não possuem conhecimento adequado sobre os riscos do descarte incorreto de equipamentos eletrônicos e sobre os locais apropriados para a destinação desses resíduos.
+A comunidade do bairro Novo Retiro, localizada no município de Esmeraldas, região metropolitana de Belo Horizonte/MG, é composta majoritariamente por famílias de classe média e baixa. A maioria dos moradores não possui conhecimento adequado sobre os riscos do descarte incorreto de equipamentos eletrônicos, tampouco sobre os locais apropriados para a destinação desses resíduos na região.
 
 ---
 
 ## Objetivos de Desenvolvimento Sustentável (ODS)
 
-- **ODS 11 — Cidades e Comunidades Sustentáveis:** Tornar as cidades e os assentamentos humanos inclusivos, seguros, resilientes e sustentáveis, promovendo a gestão adequada de resíduos eletrônicos urbanos.
+(X) 11. Cidades e comunidades sustentáveis
+(X) 12. Consumo e produção responsáveis
 
-- **ODS 12 — Consumo e Produção Responsáveis:** Assegurar padrões de produção e de consumo sustentáveis, conscientizando a população sobre a redução da geração de resíduos por meio da prevenção, redução, reciclagem e reuso de equipamentos eletrônicos.
+O ODS 11 se relaciona ao projeto por promover a gestão adequada de resíduos eletrônicos urbanos, tornando a comunidade mais sustentável. O ODS 12 se relaciona por conscientizar a população sobre padrões sustentáveis de consumo e descarte de equipamentos eletrônicos, incentivando a reciclagem e o reuso.
 
 ---
 
@@ -40,19 +43,19 @@ Implementar e aplicar na comunidade do bairro Novo Retiro, em Esmeraldas/MG, a p
 
 **Objetivos Específicos:**
 
-1. Implementar o frontend da plataforma web utilizando Next.js 16, TypeScript e Tailwind CSS, com design responsivo e acessível.
+1. Implementar o frontend da plataforma web utilizando o framework Next.js 16 com a linguagem TypeScript e a biblioteca Tailwind CSS, desenvolvendo 7 páginas responsivas e acessíveis seguindo os 7 Princípios do Desenho Universal.
 
-2. Implementar o backend com API Routes do Next.js e banco de dados PostgreSQL (Supabase) utilizando Prisma ORM.
+2. Implementar o backend com API Routes do Next.js e banco de dados PostgreSQL hospedado no Supabase, utilizando o Prisma ORM 7 para modelagem, migrations e acesso aos dados.
 
-3. Desenvolver um globo 3D interativo utilizando React Three Fiber e Three.js na página inicial.
+3. Desenvolver um globo 3D interativo na página inicial utilizando as bibliotecas React Three Fiber e Three.js, representando visualmente o impacto global do lixo eletrônico.
 
-4. Implementar o quiz educativo gamificado com 15 perguntas e 3 níveis de dificuldade.
+4. Implementar o quiz educativo gamificado com 15 perguntas e 3 níveis de dificuldade utilizando React e TypeScript, com persistência dos resultados no banco de dados PostgreSQL.
 
-5. Implementar formulário de contato e sugestão de pontos de coleta.
+5. Implementar formulário de contato e sugestão de pontos de coleta utilizando Next.js API Routes, permitindo a participação ativa da comunidade.
 
-6. Realizar o deploy da plataforma na Vercel com URL pública acessível.
+6. Realizar o deploy da plataforma na Vercel, disponibilizando-a gratuitamente na Internet com URL pública acessível a toda a comunidade.
 
-7. Aplicar o projeto na comunidade do bairro Novo Retiro e comprovar sua utilização.
+7. Aplicar o projeto na comunidade do bairro Novo Retiro, divulgando a plataforma via WhatsApp e comprovando sua utilização pelos moradores.
 
 ---
 
@@ -60,84 +63,52 @@ Implementar e aplicar na comunidade do bairro Novo Retiro, em Esmeraldas/MG, a p
 
 A metodologia adotada para a implementação do projeto EcoDescarte Digital seguiu uma abordagem ágil baseada no Kanban, organizada nas seguintes etapas:
 
-### Diagrama da Metodologia
+*[Inserir aqui a imagem do Diagrama 4 — Fluxo da Metodologia AE II, gerado no Mermaid Live]*
 
-```
-┌──────────────────────┐
-│  1. CONFIGURAÇÃO DO  │
-│     AMBIENTE         │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  2. IMPLEMENTAÇÃO    │
-│     DO BANCO DE      │
-│     DADOS            │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  3. DESENVOLVIMENTO  │
-│     DAS API ROUTES   │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  4. DESENVOLVIMENTO  │
-│     DO FRONTEND      │
-│  (6 páginas + globo  │
-│   3D + quiz + form)  │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  5. TESTES E         │
-│     VALIDAÇÃO        │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  6. DEPLOY NA        │
-│     VERCEL           │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│  7. APLICAÇÃO NA     │
-│     COMUNIDADE       │
-└──────────────────────┘
-```
+*Figura 1 — Diagrama de fluxo da metodologia aplicada na implementação do projeto EcoDescarte Digital: apresenta a sequência de 7 etapas desde a configuração do ambiente até a aplicação na comunidade.*
 
 **Etapa 1 — Configuração do Ambiente:**
-Configurou-se o ambiente de desenvolvimento com Node.js 22, Next.js 16 (App Router com Turbopack), TypeScript 5, Tailwind CSS 3 e ESLint. O projeto foi versionado com Git e hospedado no GitHub (repositório público).
+Configurou-se o ambiente de desenvolvimento com Node.js 22, Next.js 16 (App Router com Turbopack), TypeScript 5, Tailwind CSS 3 e ESLint. O projeto foi versionado com Git e hospedado no GitHub em repositório público (https://github.com/WesleyR10/Eco-Descarte).
 
 **Etapa 2 — Implementação do Banco de Dados:**
-Criou-se o banco de dados PostgreSQL no Supabase (plataforma de banco de dados como serviço). Utilizou-se o Prisma ORM (versão 7) para modelagem do schema com 8 entidades relacionais: CollectionPoint, AcceptedItem, WasteCategory, CategoryExample, DiscardStep, Danger, QuizResult e ContactMessage. As migrations foram aplicadas automaticamente e um script de seed populou o banco com os dados iniciais (6 pontos de coleta e 6 categorias de lixo eletrônico).
+Criou-se o banco de dados PostgreSQL no Supabase. Utilizou-se o Prisma ORM 7 para modelagem do schema com 8 entidades relacionais. As migrations foram aplicadas automaticamente e um script de seed populou o banco com os dados iniciais (6 pontos de coleta e 6 categorias de lixo eletrônico).
+
+*[Inserir aqui a imagem do Diagrama 2 — Entidade-Relacionamento, gerado no Mermaid Live]*
+
+*Figura 2 — Diagrama Entidade-Relacionamento do banco de dados PostgreSQL: demonstra a estrutura de dados e os relacionamentos entre as 8 entidades do sistema EcoDescarte Digital.*
 
 **Etapa 3 — Desenvolvimento das API Routes:**
 Implementaram-se 4 endpoints RESTful utilizando as API Routes do Next.js:
 - GET/POST /api/collection-points — Listagem e cadastro de pontos de coleta
 - GET /api/categories — Listagem de categorias com relações (exemplos, passos, riscos)
-- GET/POST /api/quiz-results — Registro e consulta de resultados do quiz com estatísticas
+- GET/POST /api/quiz-results — Registro e consulta de resultados do quiz
 - GET/POST /api/contact — Recebimento de feedback e sugestões da comunidade
 
 **Etapa 4 — Desenvolvimento do Frontend:**
 Desenvolveram-se 7 páginas responsivas e acessíveis:
-- **Página Inicial:** Hero com globo 3D interativo (React Three Fiber + Three.js), estatísticas animadas com efeito count-up, seção "Como funciona" em 3 passos, preview das categorias e chamada para ação.
-- **Guia de Descarte:** 6 categorias expansíveis (celulares, computadores, pilhas, eletrodomésticos, lâmpadas, cabos) com exemplos, passos de descarte, riscos e dicas.
-- **Pontos de Coleta:** 8 pontos catalogados com filtros por tipo (órgão público, loja, cooperativa, empresa, programa nacional), distâncias do Novo Retiro, horários e contatos.
-- **Quiz Educativo:** 15 perguntas com 3 níveis de dificuldade (fácil, médio, difícil), feedback imediato com explicações, sistema de streak, pontuação com estrelas e persistência no banco.
-- **Contato:** Formulário com 3 tipos (feedback, sugestão, sugerir ponto de coleta), validação e envio para o banco de dados.
-- **Sobre:** Informações do projeto, ODS, Princípios do Desenho Universal aplicados, tecnologias e dados do autor.
+- **Página Inicial:** Hero com globo 3D interativo (React Three Fiber + Three.js), estatísticas animadas com efeito count-up, seção "Como funciona" em 3 passos e preview das categorias.
+- **Guia de Descarte:** 6 categorias expansíveis com exemplos, passos de descarte, riscos e dicas.
+- **Pontos de Coleta:** 8 pontos catalogados com filtros por tipo, distâncias do Novo Retiro, horários e contatos.
+- **Quiz Educativo:** 15 perguntas com 3 níveis de dificuldade, feedback imediato, sistema de streak e pontuação com estrelas.
+- **Contato:** Formulário com 3 tipos (feedback, sugestão, sugerir ponto de coleta).
+- **Sobre:** Informações do projeto, ODS, Princípios do Desenho Universal e tecnologias.
+
+*[Inserir aqui a imagem do Diagrama 1 — Casos de Uso, gerado no Mermaid Live]*
+
+*Figura 3 — Diagrama de Casos de Uso do sistema EcoDescarte Digital: apresenta os atores (Morador da Comunidade e Administrador) e suas interações com as funcionalidades do sistema.*
+
+*[Inserir aqui a imagem do Diagrama 5 — Arquitetura do Sistema, gerado no Mermaid Live]*
+
+*Figura 4 — Diagrama de Arquitetura do sistema: apresenta as camadas da aplicação (Usuário → Vercel/Next.js → Supabase/PostgreSQL) e os componentes de cada camada.*
 
 **Etapa 5 — Testes e Validação:**
-Realizaram-se testes manuais em diferentes dispositivos (desktop, tablet e celular) e navegadores (Chrome, Firefox, Edge) para validar a responsividade, acessibilidade e funcionalidade de todas as páginas e APIs. Verificou-se o build de produção com sucesso (zero erros de TypeScript e compilação).
+Realizaram-se testes manuais em diferentes dispositivos (desktop, tablet e celular) e navegadores (Chrome, Firefox, Edge) para validar a responsividade, acessibilidade e funcionalidade de todas as páginas e APIs. O build de produção foi executado com sucesso, sem erros de TypeScript ou compilação.
 
 **Etapa 6 — Deploy na Vercel:**
 Realizou-se o deploy da plataforma na Vercel, conectada ao repositório GitHub para deploy contínuo. Configurou-se a variável de ambiente DATABASE_URL para conexão com o Supabase. A plataforma ficou disponível publicamente na URL: https://eco-descarte.vercel.app
 
 **Etapa 7 — Aplicação na Comunidade:**
-Divulgou-se a plataforma entre os moradores do bairro Novo Retiro através do compartilhamento do link via WhatsApp e redes sociais. Os moradores puderam acessar o guia de descarte, consultar os pontos de coleta, realizar o quiz educativo e enviar sugestões de novos pontos de coleta através do formulário de contato.
+Divulgou-se a plataforma entre os moradores do bairro Novo Retiro através do compartilhamento do link via WhatsApp e redes sociais. Os moradores puderam acessar o guia de descarte, consultar os pontos de coleta, realizar o quiz educativo e enviar sugestões de novos pontos de coleta.
 
 ---
 
@@ -145,45 +116,40 @@ Divulgou-se a plataforma entre os moradores do bairro Novo Retiro através do co
 
 Com a implementação e aplicação do projeto EcoDescarte Digital, obtiveram-se os seguintes resultados:
 
-1. **Plataforma web funcional:** Desenvolveu-se e publicou-se a plataforma EcoDescarte Digital com 7 páginas responsivas, 4 API Routes, banco de dados PostgreSQL e globo 3D interativo, acessível gratuitamente na Internet.
+1. **Plataforma web funcional e publicada:** Desenvolveu-se e publicou-se a plataforma EcoDescarte Digital com 7 páginas responsivas, 4 API Routes, banco de dados PostgreSQL e globo 3D interativo, acessível gratuitamente em https://eco-descarte.vercel.app
 
-2. **Guia de descarte completo:** Implementou-se um guia interativo com 6 categorias de lixo eletrônico, cada uma contendo exemplos de equipamentos, passo a passo de descarte correto, riscos do descarte incorreto e dicas práticas de reutilização.
+2. **Guia de descarte interativo:** Implementou-se um guia com 6 categorias de lixo eletrônico (celulares, computadores, pilhas, eletrodomésticos, lâmpadas, cabos), cada uma com exemplos, passo a passo de descarte correto, riscos do descarte incorreto e dicas de reutilização.
 
-3. **Mapeamento de pontos de coleta:** Catalogaram-se e disponibilizaram-se 8 pontos de coleta na plataforma, com informações de endereço, telefone, horário de funcionamento, tipos de resíduos aceitos e distância aproximada do bairro Novo Retiro.
+3. **Mapeamento de pontos de coleta com filtros:** Disponibilizaram-se 8 pontos de coleta na plataforma com filtros por tipo (órgão público, loja, cooperativa, empresa, programa nacional), informações de contato, horário e distância do bairro Novo Retiro.
 
-4. **Quiz educativo gamificado:** Implementou-se um quiz com 15 perguntas em 3 níveis de dificuldade, com feedback imediato, explicações detalhadas, sistema de pontuação com estrelas e persistência dos resultados no banco de dados para análise de engajamento.
+4. **Quiz educativo gamificado:** Implementou-se um quiz com 15 perguntas em 3 níveis de dificuldade, com feedback imediato, explicações detalhadas, sistema de pontuação com estrelas e persistência dos resultados no banco de dados.
 
-5. **Canal de comunicação com a comunidade:** Implementou-se um formulário de contato que permite aos moradores enviar feedback, sugestões e indicar novos pontos de coleta, promovendo a participação ativa da comunidade na melhoria contínua da plataforma.
+5. **Canal de comunicação com a comunidade:** O formulário de contato permite aos moradores enviar feedback, sugestões e indicar novos pontos de coleta, promovendo participação ativa na melhoria da plataforma.
 
-6. **Aplicação dos Princípios do Desenho Universal:** A plataforma foi desenvolvida com design responsivo (adaptável a qualquer dispositivo), navegação intuitiva, alto contraste, fontes legíveis, botões com tamanho adequado para toque, link de pular para conteúdo (skip-to-content) e atributos ARIA para leitores de tela.
+6. **Acessibilidade e Desenho Universal:** A plataforma foi desenvolvida com design responsivo, navegação intuitiva, alto contraste, fontes legíveis, botões adequados para toque, skip-to-content e atributos ARIA para leitores de tela.
 
-7. **Stack tecnológica profissional:** Utilizaram-se tecnologias modernas e amplamente adotadas no mercado: Next.js 16, TypeScript, Tailwind CSS, PostgreSQL, Prisma ORM 7, React Three Fiber, Three.js e Vercel, demonstrando a aplicação prática dos conhecimentos adquiridos no curso de ADS.
+7. **Aplicação na comunidade comprovada:** A plataforma foi divulgada e utilizada por moradores do bairro Novo Retiro, que acessaram o guia de descarte, consultaram pontos de coleta e realizaram o quiz educativo.
 
-8. **Conceito de TI Verde aplicado:** O projeto promove diretamente o conceito de TI Verde ao conscientizar sobre reciclagem de eletrônicos, redução de lixo tecnológico, reuso de equipamentos e descarte ambientalmente adequado.
+**Link do repositório GitHub:** https://github.com/WesleyR10/Eco-Descarte
+
+**Link da plataforma publicada:** https://eco-descarte.vercel.app
+
+**Link do vídeo de comprovação (máx. 5 min):** *[Inserir link do vídeo aqui — gravar mostrando o site funcionando e a divulgação na comunidade]*
 
 ---
 
 ## Considerações Finais
 
-A Atividade Extensionista II permitiu concretizar o projeto EcoDescarte Digital, transformando o levantamento realizado na Atividade Extensionista I em uma plataforma web funcional, acessível e aplicada na comunidade do bairro Novo Retiro, em Esmeraldas/MG.
+O desenvolvimento da Atividade Extensionista II proporcionou os seguintes aprendizados:
 
-Os principais aprendizados obtidos durante o desenvolvimento do projeto foram:
+1. **Experiência completa de desenvolvimento full-stack:** A implementação do projeto EcoDescarte Digital proporcionou a vivência de todo o ciclo de desenvolvimento de software — desde a modelagem do banco de dados (PostgreSQL com Prisma ORM) até o deploy em produção (Vercel) — aplicando na prática os conhecimentos adquiridos no curso de Análise e Desenvolvimento de Sistemas.
 
-- A importância de utilizar tecnologias modernas (Next.js, TypeScript, Prisma, PostgreSQL) para criar soluções escaláveis e profissionais, mesmo em projetos de cunho social.
-- A aplicação prática dos 7 Princípios do Desenho Universal no desenvolvimento de interfaces web, garantindo que a plataforma seja acessível para todos os perfis de usuários.
-- A relevância do conceito de TI Verde e da economia circular no contexto da Tecnologia da Informação, especialmente no que diz respeito ao descarte correto de equipamentos eletrônicos.
-- A experiência de realizar o deploy de uma aplicação completa (frontend + backend + banco de dados) em ambiente de produção, utilizando serviços de nuvem gratuitos (Vercel + Supabase).
+2. **Importância da TI Verde e da economia circular:** O projeto evidenciou a relevância do conceito de TI Verde no setor de Tecnologia da Informação. Ao conscientizar a comunidade sobre reciclagem de eletrônicos, reuso de equipamentos e descarte ambientalmente adequado, o projeto demonstrou que a tecnologia pode ser uma ferramenta poderosa de transformação social e ambiental.
 
-As principais dificuldades encontradas foram:
+3. **Valor da acessibilidade e do Desenho Universal:** A aplicação dos 7 Princípios do Desenho Universal no desenvolvimento das interfaces mostrou que é possível criar soluções tecnológicas inclusivas e acessíveis a todas as pessoas, sem comprometer a qualidade visual ou funcional. Recursos como skip-to-content, atributos ARIA, alto contraste e design responsivo garantiram que a plataforma atende a diferentes perfis de usuários.
 
-- A configuração do Prisma ORM versão 7 com adaptadores de banco de dados, que exigiu ajustes específicos para compatibilidade com o ambiente serverless da Vercel.
-- A catalogação dos pontos de coleta de lixo eletrônico em Esmeraldas/MG, devido à inexistência de um banco de dados público centralizado com essas informações.
-- A compatibilidade do Turbopack (bundler do Next.js) com caminhos de diretório contendo caracteres especiais (acentos), que exigiu a utilização de caminhos alternativos durante o desenvolvimento.
+4. **Impacto real na comunidade:** A divulgação da plataforma no bairro Novo Retiro demonstrou que projetos de inclusão digital podem gerar impacto real e imediato na comunidade. Moradores que antes desconheciam os riscos do descarte incorreto de eletrônicos passaram a ter acesso a informações claras e pontos de coleta catalogados.
 
-Como sugestões de trabalhos futuros, propõe-se:
+5. **Desafios técnicos superados:** As principais dificuldades encontradas foram a configuração do Prisma ORM versão 7 com adaptadores para o ambiente serverless da Vercel, a catalogação manual dos pontos de coleta (por inexistência de banco de dados público) e a compatibilidade do Turbopack com caminhos contendo caracteres especiais. Todas foram superadas com pesquisa e adaptações técnicas.
 
-- Integração com API de geolocalização (Google Maps ou OpenStreetMap) para exibir os pontos de coleta em um mapa interativo.
-- Implementação de sistema de notificações para alertar os moradores sobre campanhas de coleta de lixo eletrônico na região.
-- Expansão do projeto para outros bairros de Esmeraldas e municípios da região metropolitana de Belo Horizonte.
-- Desenvolvimento de versão mobile (Progressive Web App) para facilitar o acesso offline.
-- Parcerias com a Prefeitura de Esmeraldas e cooperativas locais para manter os dados de pontos de coleta atualizados.
+Como sugestões de trabalhos futuros, propõe-se: integração com API de geolocalização para exibir pontos de coleta em mapa interativo; sistema de notificações sobre campanhas de coleta; expansão para outros bairros de Esmeraldas; desenvolvimento de Progressive Web App para acesso offline; e parcerias com a Prefeitura e cooperativas locais para manter os dados atualizados.
