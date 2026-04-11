@@ -11,33 +11,85 @@
     @apply bg-dark-950 text-dark-100 antialiased;
   }
 
-  /* Light theme overrides */
+  /* Light theme - high contrast */
   html.light body {
-    @apply bg-white text-dark-800;
+    @apply bg-gray-50 text-gray-900;
   }
 
   html.light .card {
-    @apply bg-white/90 border-gray-200 hover:border-primary-400/50 hover:shadow-lg hover:shadow-primary-500/10;
+    @apply bg-white border-gray-200 shadow-sm hover:border-primary-400 hover:shadow-md;
   }
 
   html.light .btn-secondary {
-    @apply border-gray-300 text-dark-600 hover:text-primary-600 hover:border-primary-400;
+    @apply border-gray-300 text-gray-700 hover:text-primary-700 hover:border-primary-500;
   }
 
   html.light .section-subtitle {
-    @apply text-dark-500;
+    @apply text-gray-600;
+  }
+
+  html.light .text-dark-300,
+  html.light .text-dark-400 {
+    color: #374151 !important;
+  }
+
+  html.light .text-dark-500 {
+    color: #4b5563 !important;
+  }
+
+  html.light .text-dark-200 {
+    color: #1f2937 !important;
+  }
+
+  html.light .text-white {
+    color: #111827 !important;
   }
 
   html.light header {
-    @apply bg-white/90 border-gray-200;
+    @apply bg-white/95 border-gray-200;
   }
 
-  html.light header a {
-    @apply text-dark-600;
+  html.light header a,
+  html.light header button {
+    @apply text-gray-700;
+  }
+
+  html.light header span.text-white {
+    color: #111827 !important;
   }
 
   html.light footer {
-    @apply bg-gray-50 border-gray-200;
+    @apply bg-white border-gray-200;
+  }
+
+  html.light footer p,
+  html.light footer a,
+  html.light footer span,
+  html.light footer h3 {
+    color: #374151 !important;
+  }
+
+  html.light .bg-dark-800,
+  html.light .bg-dark-800\/50 {
+    background-color: #f3f4f6 !important;
+  }
+
+  html.light .bg-dark-900\/50,
+  html.light .bg-dark-900\/80 {
+    background-color: #f9fafb !important;
+  }
+
+  html.light .border-dark-700\/50,
+  html.light .border-dark-800\/50 {
+    border-color: #e5e7eb !important;
+  }
+
+  html.light .bg-dark-700\/50 {
+    background-color: #e5e7eb !important;
+  }
+
+  html.light .hero-section {
+    background: linear-gradient(to bottom right, #ecfdf5, #f0fdf4, #ffffff) !important;
   }
 }
 
