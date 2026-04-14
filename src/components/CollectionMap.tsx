@@ -4,90 +4,33 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
-
-interface MapPoint {
-  name: string;
-  address: string;
-  lat: number;
-  lng: number;
-  type: string;
-  phone?: string;
-}
-
-const COLLECTION_POINTS: MapPoint[] = [
-  {
-    name: "Prefeitura Municipal de Esmeraldas",
-    address: "Praça Getúlio Vargas, 36 — Centro, Esmeraldas/MG",
-    lat: -19.7631,
-    lng: -44.3142,
-    type: "prefeitura",
-    phone: "(31) 3623-1000",
-  },
-  {
-    name: "Ecoponto SLU — Pampulha",
-    address: "Av. Antônio Carlos, 7596 — Pampulha, BH",
-    lat: -19.8694,
-    lng: -43.9673,
-    type: "prefeitura",
-    phone: "(31) 3277-9380",
-  },
-  {
-    name: "Cooperativa de Catadores de Esmeraldas",
-    address: "Bairro Industrial — Esmeraldas/MG",
-    lat: -19.758,
-    lng: -44.305,
-    type: "cooperativa",
-  },
-  {
-    name: "GM&C Reciclagem de Eletrônicos",
-    address: "R. Vinte e Quatro, 50 — Contagem/MG",
-    lat: -19.932,
-    lng: -44.0538,
-    type: "empresa",
-    phone: "(31) 3391-7000",
-  },
-  {
-    name: "Magazine Luiza — Descarte Consciente",
-    address: "Lojas da região metropolitana de BH",
-    lat: -19.8157,
-    lng: -44.2045,
-    type: "loja",
-    phone: "0800-310-0002",
-  },
-  {
-    name: "Casas Bahia — Logística Reversa",
-    address: "Lojas da região metropolitana de BH",
-    lat: -19.84,
-    lng: -44.15,
-    type: "loja",
-    phone: "4003-0101",
-  },
-];
+import { collectionPoints } from "@/data/collection-points";
 
 const typeConfig: Record<string, { color: string; emoji: string; label: string }> = {
   prefeitura: { color: "#3b82f6", emoji: "🏛️", label: "Órgão Público" },
   cooperativa: { color: "#f59e0b", emoji: "🤝", label: "Cooperativa" },
   empresa: { color: "#10b981", emoji: "🏭", label: "Empresa de Reciclagem" },
   loja: { color: "#a855f7", emoji: "🛒", label: "Loja / Varejo" },
-  user: { color: "#ef4444", emoji: "📍", label: "Sua Localização" },
+  ong: { color: "#f43f5e", emoji: "♻️", label: "Programa Nacional" },
+  user: { color: "#ef4444", emoji: "🏠", label: "Sua Localização" },
 };
 
 function createIcon(type: string) {
   const config = typeConfig[type] || typeConfig.empresa;
-  const size = type === "user" ? 36 : 30;
+  const size = type === "user" ? 38 : 32;
   return L.divIcon({
     className: "",
     html: `<div style="
-      font-size: ${size * 0.6}px;
+      font-size: ${size * 0.55}px;
       width: ${size}px;
       height: ${size}px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: ${config.color};
-      border: 2px solid white;
+      border: 2.5px solid white;
       border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       cursor: pointer;
       ${type === "user" ? "animation: userPulse 2s infinite;" : ""}
     ">${config.emoji}</div>`,
@@ -102,12 +45,15 @@ function calcDistance(lat1: number, lng1: number, lat2: number, lng2: number): n
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
   const dLng = ((lng2 - lng1) * Math.PI) / 180;
   const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.sin(dLat / 2) ** 2 +
     Math.cos((lat1 * Math.PI) / 180) *
     Math.cos((lat2 * Math.PI) / 180) *
-    Math.sin(dLng / 2) *
-    Math.sin(dLng / 2);
+    Math.sin(dLng / 2) ** 2;
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+export function formatDistance(km: number): string {
+  return km < 1 ? `${Math.round(km * 1000)}m` : `${km.toFixed(1)} km`;
 }
 
 function FlyToUser({ lat, lng }: { lat: number; lng: number }) {
@@ -118,41 +64,45 @@ function FlyToUser({ lat, lng }: { lat: number; lng: number }) {
   return null;
 }
 
-export default function CollectionMap() {
-  const [userPos, setUserPos] = useState<{ lat: number; lng: number } | null>(null);
-  const [geoStatus, setGeoStatus] = useState<"idle" | "loading" | "granted" | "denied">("idle");
+interface CollectionMapProps {
+  onUserLocation?: (pos: { lat: number; lng: number }) => void;
+}
 
-  // Auto-request location on mount
+export default function CollectionMap({ onUserLocation }: CollectionMapProps) {
+  const [userPos, setUserPos] = useState<{ lat: number; lng: number } | null>(null);
+  const [geoStatus, setGeoStatus] = useState<"loading" | "granted" | "denied">("loading");
+
   useEffect(() => {
     if (!navigator.geolocation) {
       setGeoStatus("denied");
       return;
     }
-    setGeoStatus("loading");
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        setUserPos({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        setUserPos(loc);
         setGeoStatus("granted");
+        onUserLocation?.(loc);
       },
       () => setGeoStatus("denied"),
       { enableHighAccuracy: true, timeout: 8000 }
     );
-  }, []);
+  }, [onUserLocation]);
 
   const sortedPoints = userPos
-    ? [...COLLECTION_POINTS].sort(
+    ? [...collectionPoints].sort(
       (a, b) =>
         calcDistance(userPos.lat, userPos.lng, a.lat, a.lng) -
         calcDistance(userPos.lat, userPos.lng, b.lat, b.lng)
     )
-    : COLLECTION_POINTS;
+    : collectionPoints;
 
   return (
     <div>
       <style jsx global>{`
         @keyframes userPulse {
           0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
-          50% { box-shadow: 0 0 0 12px rgba(239,68,68,0); }
+          50% { box-shadow: 0 0 0 14px rgba(239,68,68,0); }
         }
         .leaflet-container { border-radius: 1rem; }
         .leaflet-popup-content-wrapper {
@@ -161,7 +111,7 @@ export default function CollectionMap() {
         }
       `}</style>
 
-      {/* Geolocation status */}
+      {/* Status */}
       {geoStatus === "loading" && (
         <div className="mb-4 p-3 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center gap-2 text-sm">
           <span className="w-4 h-4 border-2 border-primary-400 border-t-transparent rounded-full animate-spin" />
@@ -175,7 +125,7 @@ export default function CollectionMap() {
       )}
       {geoStatus === "granted" && userPos && (
         <div className="mb-4 p-3 rounded-xl bg-primary-500/10 border border-primary-500/20 text-sm text-primary-400 font-medium">
-          ✅ Localização obtida! Mostrando {sortedPoints.length} pontos de coleta ordenados por proximidade.
+          ✅ Localização obtida! Mostrando {sortedPoints.length} pontos ordenados por proximidade.
         </div>
       )}
 
@@ -195,42 +145,43 @@ export default function CollectionMap() {
           <>
             <FlyToUser lat={userPos.lat} lng={userPos.lng} />
             <Marker position={[userPos.lat, userPos.lng]} icon={createIcon("user")}>
-              <Popup>
-                <strong>📍 Você está aqui</strong>
-              </Popup>
+              <Popup><strong>🏠 Você está aqui</strong></Popup>
             </Marker>
           </>
         )}
 
-        {sortedPoints.map((point, i) => {
+        {sortedPoints.map((point) => {
           const dist = userPos
             ? calcDistance(userPos.lat, userPos.lng, point.lat, point.lng)
             : null;
+          const config = typeConfig[point.type] || typeConfig.empresa;
           return (
-            <Marker key={i} position={[point.lat, point.lng]} icon={createIcon(point.type)}>
+            <Marker key={point.id} position={[point.lat, point.lng]} icon={createIcon(point.type)}>
               <Popup>
-                <div style={{ minWidth: "220px", lineHeight: "1.5" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-                    <span style={{
-                      background: typeConfig[point.type]?.color || "#10b981",
-                      color: "white",
-                      padding: "2px 8px",
-                      borderRadius: "12px",
-                      fontSize: "10px",
-                      fontWeight: "600",
-                    }}>
-                      {typeConfig[point.type]?.label}
-                    </span>
+                <div style={{ minWidth: "230px", lineHeight: "1.5" }}>
+                  <span style={{
+                    background: config.color,
+                    color: "white",
+                    padding: "2px 10px",
+                    borderRadius: "12px",
+                    fontSize: "10px",
+                    fontWeight: "600",
+                  }}>
+                    {config.emoji} {config.label}
+                  </span>
+                  <div style={{ marginTop: "6px" }}>
+                    <strong style={{ fontSize: "13px" }}>{point.name}</strong>
                   </div>
-                  <strong style={{ fontSize: "13px" }}>{point.name}</strong>
-                  <br />
-                  <span style={{ fontSize: "11px", color: "#666" }}>{point.address}</span>
+                  <div style={{ fontSize: "11px", color: "#666", marginTop: "2px" }}>{point.address}</div>
                   {point.phone && (
                     <div style={{ fontSize: "11px", marginTop: "2px" }}>📞 {point.phone}</div>
                   )}
+                  {point.hours && (
+                    <div style={{ fontSize: "11px", marginTop: "2px" }}>🕐 {point.hours}</div>
+                  )}
                   {dist !== null && (
-                    <div style={{ fontSize: "11px", color: "#10b981", fontWeight: "600", marginTop: "4px" }}>
-                      📏 {dist < 1 ? `${Math.round(dist * 1000)}m` : `${dist.toFixed(1)}km`} de você
+                    <div style={{ fontSize: "12px", color: "#10b981", fontWeight: "700", marginTop: "6px" }}>
+                      📏 {formatDistance(dist)} de você
                     </div>
                   )}
                   <a
@@ -264,7 +215,7 @@ export default function CollectionMap() {
           <div key={key} className="flex items-center gap-1.5 text-xs text-dark-300">
             <span
               style={{ background: config.color }}
-              className="w-3 h-3 rounded-full inline-block border border-white/50"
+              className="w-3.5 h-3.5 rounded-full inline-block border-2 border-white shadow-sm"
             />
             {config.emoji} {config.label}
           </div>

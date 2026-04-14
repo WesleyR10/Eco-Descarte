@@ -9,6 +9,8 @@ export interface CollectionPoint {
   hours?: string;
   type: "prefeitura" | "loja" | "cooperativa" | "empresa" | "ong";
   distance?: string;
+  lat: number;
+  lng: number;
 }
 
 export const collectionPoints: CollectionPoint[] = [
@@ -19,16 +21,12 @@ export const collectionPoints: CollectionPoint[] = [
     city: "Esmeraldas",
     state: "MG",
     phone: "(31) 3623-1000",
-    accepts: [
-      "Eletrodomésticos",
-      "Computadores",
-      "Celulares",
-      "Pilhas e baterias",
-      "Lâmpadas",
-    ],
+    accepts: ["Eletrodomésticos", "Computadores", "Celulares", "Pilhas e baterias", "Lâmpadas"],
     hours: "Segunda a Sexta: 8h às 17h",
     type: "prefeitura",
     distance: "~5 km do Novo Retiro",
+    lat: -19.7631,
+    lng: -44.3142,
   },
   {
     id: "2",
@@ -37,15 +35,12 @@ export const collectionPoints: CollectionPoint[] = [
     city: "Belo Horizonte",
     state: "MG",
     phone: "(31) 3277-9380",
-    accepts: [
-      "Todos os tipos de lixo eletrônico",
-      "Lâmpadas fluorescentes",
-      "Pilhas e baterias",
-      "Eletrodomésticos grandes",
-    ],
+    accepts: ["Todos os tipos de lixo eletrônico", "Lâmpadas fluorescentes", "Pilhas e baterias", "Eletrodomésticos grandes"],
     hours: "Segunda a Sábado: 7h às 18h",
     type: "prefeitura",
     distance: "~30 km",
+    lat: -19.8694,
+    lng: -43.9673,
   },
   {
     id: "3",
@@ -58,6 +53,8 @@ export const collectionPoints: CollectionPoint[] = [
     hours: "Horário comercial da loja",
     type: "loja",
     distance: "Diversas unidades",
+    lat: -19.8157,
+    lng: -44.2045,
   },
   {
     id: "4",
@@ -70,6 +67,8 @@ export const collectionPoints: CollectionPoint[] = [
     hours: "Horário comercial da loja",
     type: "loja",
     distance: "Diversas unidades",
+    lat: -19.84,
+    lng: -44.15,
   },
   {
     id: "5",
@@ -77,15 +76,12 @@ export const collectionPoints: CollectionPoint[] = [
     address: "Bairro Industrial — Esmeraldas/MG",
     city: "Esmeraldas",
     state: "MG",
-    accepts: [
-      "Computadores e periféricos",
-      "Cabos e fios de cobre",
-      "Eletrodomésticos pequenos",
-      "Metais e placas de circuito",
-    ],
+    accepts: ["Computadores e periféricos", "Cabos e fios de cobre", "Eletrodomésticos pequenos", "Metais e placas de circuito"],
     hours: "Segunda a Sexta: 8h às 16h",
     type: "cooperativa",
     distance: "~7 km do Novo Retiro",
+    lat: -19.758,
+    lng: -44.305,
   },
   {
     id: "6",
@@ -94,15 +90,12 @@ export const collectionPoints: CollectionPoint[] = [
     city: "Contagem",
     state: "MG",
     phone: "(31) 3391-7000",
-    accepts: [
-      "Todos os tipos de eletrônicos",
-      "Equipamentos de informática",
-      "Telecomunicações",
-      "Equipamentos médicos",
-    ],
+    accepts: ["Todos os tipos de eletrônicos", "Equipamentos de informática", "Telecomunicações", "Equipamentos médicos"],
     hours: "Segunda a Sexta: 8h às 18h",
     type: "empresa",
     distance: "~25 km",
+    lat: -19.932,
+    lng: -44.0538,
   },
   {
     id: "7",
@@ -111,15 +104,12 @@ export const collectionPoints: CollectionPoint[] = [
     city: "Belo Horizonte",
     state: "MG",
     phone: "(31) 3225-8800",
-    accepts: [
-      "Lâmpadas fluorescentes",
-      "Pilhas e baterias",
-      "Eletrônicos em geral",
-      "Cartuchos e toners",
-    ],
+    accepts: ["Lâmpadas fluorescentes", "Pilhas e baterias", "Eletrônicos em geral", "Cartuchos e toners"],
     hours: "Segunda a Sexta: 8h às 17h30",
     type: "empresa",
     distance: "~35 km",
+    lat: -19.9191,
+    lng: -43.9386,
   },
   {
     id: "8",
@@ -127,15 +117,12 @@ export const collectionPoints: CollectionPoint[] = [
     address: "Supermercados, farmácias e bancos da região",
     city: "Esmeraldas e região",
     state: "MG",
-    accepts: [
-      "Pilhas alcalinas (AA, AAA, C, D)",
-      "Baterias recarregáveis",
-      "Pilhas botão",
-      "Baterias de celular",
-    ],
+    accepts: ["Pilhas alcalinas (AA, AAA, C, D)", "Baterias recarregáveis", "Pilhas botão", "Baterias de celular"],
     hours: "Horário do estabelecimento",
     type: "ong",
     distance: "Diversos pontos",
+    lat: -19.765,
+    lng: -44.312,
   },
 ];
 
