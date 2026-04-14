@@ -8,20 +8,31 @@ import ThemeProvider from "@/components/ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EcoDescarte Digital — Guia de Descarte de Lixo Eletrônico",
+  title: {
+    default: "EcoDescarte Digital — Descarte Correto de Lixo Eletrônico",
+    template: "%s | EcoDescarte Digital",
+  },
   description:
-    "Plataforma educativa sobre descarte correto de lixo eletrônico para a comunidade de Esmeraldas/MG. Projeto de Atividade Extensionista — Uninter.",
+    "Plataforma educativa sobre descarte correto de lixo eletrônico para a comunidade de Esmeraldas/MG. Guia interativo, pontos de coleta, quiz educativo e mapa com geolocalização.",
   keywords: [
-    "lixo eletrônico",
-    "descarte",
-    "reciclagem",
-    "e-lixo",
-    "Esmeraldas",
-    "MG",
-    "inclusão digital",
-    "ODS",
-    "sustentabilidade",
+    "lixo eletrônico", "descarte", "reciclagem", "e-lixo", "Esmeraldas",
+    "MG", "inclusão digital", "ODS", "sustentabilidade", "TI Verde",
+    "pontos de coleta", "meio ambiente",
   ],
+  openGraph: {
+    title: "EcoDescarte Digital — Para onde vai o lixo eletrônico da sua comunidade?",
+    description: "Descubra como descartar corretamente seus equipamentos eletrônicos. Guia interativo, pontos de coleta com mapa e quiz educativo.",
+    url: "https://eco-descarte.vercel.app",
+    siteName: "EcoDescarte Digital",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EcoDescarte Digital",
+    description: "Ferramenta web para descarte correto de lixo eletrônico — Esmeraldas/MG",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

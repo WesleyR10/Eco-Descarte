@@ -9,7 +9,9 @@ const navLinks = [
   { href: "/", label: "Início" },
   { href: "/guia", label: "Guia de Descarte" },
   { href: "/pontos-de-coleta", label: "Pontos de Coleta" },
+  { href: "/impacto", label: "Impacto" },
   { href: "/quiz", label: "Quiz" },
+  { href: "/blog", label: "Blog" },
   { href: "/contato", label: "Contato" },
   { href: "/sobre", label: "Sobre" },
 ];
